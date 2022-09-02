@@ -26,7 +26,8 @@ public class BaseClass {
 	public void loadConfig() {
 		try {
 			prop = new Properties();
-			FileInputStream fip = new FileInputStream("D:\\Checker_Auto\\Configuration\\Config.properties");
+			//FileInputStream fip = new FileInputStream("D:\\Checker_Auto\\Configuration\\Config.properties");
+			FileInputStream fip = new FileInputStream(System.getProperty("user.dir")+"/Configuration/Config.properties");
 			prop.load(fip);
 		}catch(FileNotFoundException e) {
 			e.printStackTrace();
