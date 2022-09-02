@@ -335,6 +335,16 @@ public class Email_Survey_Updated_In_Survey_Body_Auto_Test extends BaseClass{
 		
 	}
 	
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 	public void ExValidateEmailSurvey_OnServer() throws Throwable {
 		launchApp();
 		loginPage = new A_LoginPage();
