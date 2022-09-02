@@ -60,13 +60,16 @@ public class Email_Survey_Updated_In_Survey_Body_Auto_Test extends BaseClass{
 	//(enabled =false)
 	@BeforeClass
 	public void Asetup() throws Throwable{
+		System.out.println("================= Test Case 01 SetUp ==== Starts=================");
 		launchApp();
 		loginPage = new A_LoginPage();
 		mainMenu = loginPage.Login();
+		System.out.println("================= Test Case 01 SetUp ==== Ends=================");
 	}
 	//(enabled =false)
 	@Test
 	public void BcreateNewSampleRowEmail() throws Throwable {
+		System.out.println("================= Test Case 02 Create New Sample ==== Start=================");
 		manageMent = mainMenu.clickOnManagement();
 		manageSamples = manageMent.clickOnSamples();
 		manageEditSampleRow = manageSamples.ClickOnEditSampleRowsEmail();
@@ -81,11 +84,13 @@ public class Email_Survey_Updated_In_Survey_Body_Auto_Test extends BaseClass{
 		
 		manageEditSampleRow = addNewRow.clickAddButton();
 		mainMenu = manageEditSampleRow.clickONBackTOMainMenu();
+		System.out.println("================= Test Case 02 Create New Sample ==== Ends=================");
 	}
 	
 	//(dependsOnMethods = "BcreateNewSampleRowEmail", enabled =false)
 	@Test(dependsOnMethods = "BcreateNewSampleRowEmail")
 	public void CeditSurvey() throws Throwable {
+		System.out.println("================= Test Case 03 Edit Survey ==== Starts=================");
 		manageMent = mainMenu.clickOnManagement();
 		manageSurveys = manageMent.clickOnSurveys();
 		manageSurveys.selectClient();
@@ -115,33 +120,32 @@ public class Email_Survey_Updated_In_Survey_Body_Auto_Test extends BaseClass{
 			  sendInvitationByEmail.conform_Sample_and_Select_properSample();
 			  sendInvitationByEmail.send_Invitation();
 			  sendInvitationByEmail.close_Driver();
-			 
-		
-		
-		
-		
+			  System.out.println("================= Test Case 03 Edit Survey ==== Ends=================");	
 	}
 	
     //(dependsOnMethods = "CeditSurvey")
 	@Test(dependsOnMethods = "CeditSurvey")
 	public void DxEmailLogin_SurveySubmit() throws Throwable {
+		System.out.println("================= Test Case 04 LoginMail_and_SubmitSurvey ==== Starts=================");	
 		WebDriverManager.edgedriver().setup();
 		WebDriver driver = new EdgeDriver();
 		
 		driver.get("https://outlook.office.com/mail/");
+		System.out.println("Opens the mail Inbox");
 		driver.manage().window().maximize();
 		Action.implicitWait(driver, 30);
 		Action.pageLoadTimeouts(driver, 30);
 		
-		driver.findElement(By.xpath("//button[@name='Focused']")).click();
+		//driver.findElement(By.xpath("//button[@name='Focused']")).click();
 		
 		Thread.sleep(10000);
 		String EmailSubjectWith_TextCode = prop.getProperty("E_mail_Subject_For_Invitation");
 		String EmailSubjectWith_TextCode_Value = GetTextCode_Return_textCodeValue(EmailSubjectWith_TextCode);
 		String[] EmailSubject_Split = EmailSubjectWith_TextCode_Value.split(" ");
 		String EmailSubject_To_Search_In_Inbox = EmailSubject_Split[0]+" "+EmailSubject_Split[1];
+		System.out.println("Serching Checker Survey inviatation mail with mail Subject as: ["+EmailSubject_To_Search_In_Inbox+"]");
 		driver.findElement(By.xpath("//*[@class='customScrollBar BW6l9']/div//*[contains(@aria-label,'"+ EmailSubject_To_Search_In_Inbox +"')]")).click();
-		
+		System.out.println("Finds the survey");
 		// 2 Validate Email Subject of invitation Email
 		String emailSubjectForInviation = driver.findElement(By.xpath("//*[@class='_5FqYX HnNdo']")).getText();
 		

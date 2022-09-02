@@ -33,8 +33,8 @@ public class BG_ManageMT_Samples_EditSamplesRows_AddNewRow extends BaseClass{
 	public void enterBranchName() throws Throwable {
 		try {
 			if(prop.getProperty("WorkingURL").equalsIgnoreCase("preProd")) {
-		
-		Action.type(BranchName, prop.getProperty("sampleBranchName"));
+		    Action.type(BranchName, prop.getProperty("sampleBranchName"));
+		    System.out.println("Enter branch name as: ["+prop.getProperty("sampleBranchName")+"]");
 			} 
 		}catch(FileNotFoundException e) {
 			e.printStackTrace();
@@ -45,17 +45,21 @@ public class BG_ManageMT_Samples_EditSamplesRows_AddNewRow extends BaseClass{
 	}
 	public void enterRegion() throws Throwable {
 		Action.type(Region, prop.getProperty("sampleRegion"));
+		System.out.println("Enter region as: ["+prop.getProperty("sampleRegion")+"]");
 	}
 	public void enterContactName() throws Throwable {
 		Action.type(ContactName, prop.getProperty("sampleContactName"));
+		System.out.println("Enter Contact Name as: ["+prop.getProperty("sampleContactName")+"]");
 	}
 	
 	public void enterPhoneNumber() throws Throwable {
 		Action.type(phoneNumber, prop.getProperty("samplephoneNumber"));
+		System.out.println("Enter phoneNumber as: ["+prop.getProperty("samplephoneNumber")+"]");
 	}
 	
 	public void enterEmail() throws Throwable {
 		Action.type(EmailForSurveying, prop.getProperty("sampleEmail"));
+		System.out.println("Enter Email as: ["+prop.getProperty("sampleEmail")+"]");
 	}
 	
 	public void selectBranch() throws Throwable {
@@ -67,6 +71,7 @@ public class BG_ManageMT_Samples_EditSamplesRows_AddNewRow extends BaseClass{
 			System.out.println(branch.getText());
 			if(branch.getText().equalsIgnoreCase(prop.getProperty("sampleBranchName"))) {
 				branch.click();
+				System.out.println("Select branch as: ["+prop.getProperty("sampleBranchName")+"]");
 				break;
 			}
 		}
@@ -87,6 +92,7 @@ public class BG_ManageMT_Samples_EditSamplesRows_AddNewRow extends BaseClass{
 		Integer sampleRowIDInt = rand.nextInt(1000000);
 		String sampleRowIDString = Integer.toString(sampleRowIDInt);
 		Action.type(sampleRowID, sampleRowIDString);
+		System.out.println("Enter Unique sample row id");
 			} 
 		}catch(FileNotFoundException e) {
 			e.printStackTrace();
@@ -98,6 +104,7 @@ public class BG_ManageMT_Samples_EditSamplesRows_AddNewRow extends BaseClass{
 	
 	public BG_ManageMT_Samples_EditSampleRows clickAddButton() throws Throwable {
 		Action.click(driver, addButton);
+		System.out.println("Click add button to save Sample");
 		return new BG_ManageMT_Samples_EditSampleRows();
 	}
 	

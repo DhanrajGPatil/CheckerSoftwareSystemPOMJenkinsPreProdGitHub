@@ -45,6 +45,7 @@ public class BF_Manage_Surveys_EditSurvey extends BaseClass{
 		for(WebElement link : tagName_a_List) {
 			if(link.getAttribute("href").equalsIgnoreCase("javascript:ShowHideFileds();")) {
 				link.click();
+				System.out.println("Click show button");
 				break;
 			}
 		}
@@ -94,6 +95,7 @@ public class BF_Manage_Surveys_EditSurvey extends BaseClass{
 				cut.click();
 		               }
 		    }
+		System.out.println("Clear the Survey");
 	}		
 		
 	public void clearSurvey() throws InterruptedException {
@@ -140,19 +142,24 @@ public class BF_Manage_Surveys_EditSurvey extends BaseClass{
 				cut.click();
 		               }
 		    }
+		System.out.println("Clear the Survey");
 	}
 	
 	
 	public void enter_E_mail_SubjectForInvitation() throws Throwable {
 		Action.type(emailSubjectForInvitation, prop.getProperty("E_mail_Subject_For_Invitation"));
+		System.out.println("Enter E mail Subject for Invitaion as: ["+prop.getProperty("E_mail_Subject_For_Invitation")+"]");
 	}
 	
 	public void enter_E_mail_SubjectForInvitation_HINDI() throws Throwable {
 		if(prop.getProperty("WorkingURL").equalsIgnoreCase("Testing")) {
 		Action.type(emailSubjectForInvitation_HINDI_Testing, prop.getProperty("E_mail_Subject_For_Invitation_HINDI"));
+		       System.out.println("Enter E mail Subject in HINDI for Invitaion as: ["+prop.getProperty("E_mail_Subject_For_Invitation_HINDI")+"]");
 		}if(prop.getProperty("WorkingURL").equalsIgnoreCase("preProd")) {
 			Action.type(emailSubjectForInvitation_HINDI_preProd, prop.getProperty("E_mail_Subject_For_Invitation_HINDI"));
+			   System.out.println("Enter E mail Subject in HINDI for Invitaion as: ["+prop.getProperty("E_mail_Subject_For_Invitation_HINDI")+"]");
 		}
+		
 	}
 	
 	public void enter_e_mail_Body_For_Invitation() throws Throwable {
@@ -161,10 +168,12 @@ public class BF_Manage_Surveys_EditSurvey extends BaseClass{
 		driver.switchTo().frame(1);
 		//driver.findElement(By.xpath("//body[@class='cke_editable cke_editable_themed cke_contents_ltr cke_show_borders']/p[1]")).clear();
 		Action.type(content_InFrame_Testing, prop.getProperty("E_mail_Body_For_Invitation"));
+		   System.out.println("Enter E mail Body for Invitaion as: ["+prop.getProperty("E_mail_Body_For_Invitation")+"]");
 		driver.switchTo().defaultContent();
 		}if(prop.getProperty("WorkingURL").equalsIgnoreCase("preProd")) {
 			driver.switchTo().frame(1);
 			Action.type(content_InFrame_preProd, prop.getProperty("E_mail_Body_For_Invitation"));
+			  System.out.println("Enter E mail Body for Invitaion as: ["+prop.getProperty("E_mail_Body_For_Invitation")+"]");
 			driver.switchTo().defaultContent();	
 		}
 		
@@ -176,26 +185,32 @@ public class BF_Manage_Surveys_EditSurvey extends BaseClass{
 		driver.switchTo().frame(2);	
 		//driver.findElement(By.xpath("//body[@class='cke_editable cke_editable_themed cke_contents_ltr cke_show_borders']/p[1]")).clear();
 		Action.type(content_InFrame_Testing, prop.getProperty("E_mail_Body_For_Invitation_HINDI"));
+		System.out.println("Enter E mail Body in HINDI for Invitaion as: ["+prop.getProperty("E_mail_Body_For_Invitation_HINDI")+"]");
 		driver.switchTo().defaultContent();
     	}if(prop.getProperty("WorkingURL").equalsIgnoreCase("preProd")) {
 			driver.switchTo().frame(5);
 			
 			Action.type(content_InFrame_preProd, prop.getProperty("E_mail_Body_For_Invitation_HINDI"));
+			  System.out.println("Enter E mail Body in HINDI for Invitaion as: ["+prop.getProperty("E_mail_Body_For_Invitation_HINDI")+"]");
 			driver.switchTo().defaultContent();	
 		}
-		
+    	
 	}
 	
     public void enter_LinkText_for_Invitation() throws Throwable {
     	Action.type(LinkText_for_Invitation, prop.getProperty("LinkText"));
+    	System.out.println("Enter Link Text for Invitaion as: ["+prop.getProperty("LinkText")+"]");
     }
     
     public void enter_LinkText_for_Invitation_HINDI() throws Throwable {
     	if(prop.getProperty("WorkingURL").equalsIgnoreCase("Testing")) {
     	Action.type(LinkText_for_Invitation_HINDI_Testing, prop.getProperty("LinkText_HINDI"));
+    	System.out.println("Enter Link Text in HINDI for Invitaion as: ["+prop.getProperty("LinkText_HINDI")+"]");
     	}if(prop.getProperty("WorkingURL").equalsIgnoreCase("preProd")) {
     	Action.type(LinkText_for_Invitation_HINDI_preProd, prop.getProperty("LinkText_HINDI"));
+    	System.out.println("Enter Link Text in HINDI for Invitaion as: ["+prop.getProperty("LinkText_HINDI")+"]");
     	}
+    	
     }
     
     
@@ -205,38 +220,48 @@ public class BF_Manage_Surveys_EditSurvey extends BaseClass{
 		driver.switchTo().frame(12);
 		//driver.findElement(By.xpath("//body[@class='cke_editable cke_editable_themed cke_contents_ltr cke_show_borders']/p[1]")).clear();
 		Action.type(content_InFrame_Testing, prop.getProperty("ThankYouMessage_right_after_FillingTheSurvey"));
+		System.out.println("Enter Thank you massage Right After filling the survey as: ["+prop.getProperty("ThankYouMessage_right_after_FillingTheSurvey")+"]");
 		driver.switchTo().defaultContent();
     	}if(prop.getProperty("WorkingURL").equalsIgnoreCase("preProd")) {
 			driver.switchTo().frame(8);
 			
 			Action.type(content_InFrame_preProd, prop.getProperty("ThankYouMessage_right_after_FillingTheSurvey"));
+			System.out.println("Enter Thank you massage Right After filling the survey as: ["+prop.getProperty("ThankYouMessage_right_after_FillingTheSurvey")+"]");
 			driver.switchTo().defaultContent();	
 		}
-		
+    	
     }
 	
     public void enter_link_toGoAfterSurvey() throws Throwable {
     	Action.type(linkToGoAfterFillingSurvey, prop.getProperty("AfterThanking_GoTo_ThisLink"));
+    	System.out.println("Enter link Where driver should go after waiting some time as: ["+prop.getProperty("AfterThanking_GoTo_ThisLink")+"]");
     }
 	
     public void Waitbefore_going_ToTheLinkIn_Seconds() throws Throwable {
     	Action.type(wait, prop.getProperty("Waitbefore_going_ToTheLinkIn_Seconds"));
+    	System.out.println("Enter pause seconds as: ["+prop.getProperty("Waitbefore_going_ToTheLinkIn_Seconds")+"]");
     }
     
     public void enter_FromName() throws Throwable {
     	if(prop.getProperty("WorkingURL").equalsIgnoreCase("Testing")) {
     	Action.type(FromName, prop.getProperty("From_Name_Testing"));
+    	System.out.println("Enter From Name as: ["+prop.getProperty("From_Name_Testing")+"]");
     	}if(prop.getProperty("WorkingURL").equalsIgnoreCase("preProd")) {
     		Action.type(FromName, prop.getProperty("From_Name_preProd"));
+    		System.out.println("Enter From Name as: ["+prop.getProperty("From_Name_preProd")+"]");
     	}
+    	
     }
     
     public void enter_Email_Sender() throws Throwable {
     	if(prop.getProperty("WorkingURL").equalsIgnoreCase("Testing")) {
     	Action.type(Email_Sender, prop.getProperty("Email_Sender_Testing"));
+    	System.out.println("Enter Email sender as: ["+prop.getProperty("Email_Sender_Testing")+"]");
     	}if(prop.getProperty("WorkingURL").equalsIgnoreCase("preProd")) {
     		Action.type(Email_Sender, prop.getProperty("Email_Sender_preProd"));
+    		System.out.println("Enter Email sender as: ["+prop.getProperty("Email_Sender_preProd")+"]");
     	}
+    	
     }
 
     public void select_TypeOfMailServer() throws Throwable {
@@ -244,6 +269,7 @@ public class BF_Manage_Surveys_EditSurvey extends BaseClass{
     	for(WebElement server : serverList) {
     		if(server.getText().equalsIgnoreCase(prop.getProperty("TypeOf_Mail_server"))) {
     			server.click();
+    			System.out.println("Enter type of mail server as: ["+prop.getProperty("TypeOf_Mail_server")+"]");
     			break;
     		}
     	}
@@ -257,6 +283,7 @@ public class BF_Manage_Surveys_EditSurvey extends BaseClass{
     
     public void enter_ThankYouMessage_Body_to_be_Sent_by_Email() throws Throwable {
     	Action.type(enter_ThankYouMessage_Body_to_be_Sent_by_Email, prop.getProperty("ThankYouEmail_Message_Body_to_be_Sent_by_Email"));
+    	System.out.println("Enter thank you massage mail Subject as: "+prop.getProperty("ThankYouEmail_Message_Body_to_be_Sent_by_Email")+"]");
     }
     
     public void SMSsurveyinvitationexpiresafterXhours() throws Throwable {
@@ -264,6 +291,7 @@ public class BF_Manage_Surveys_EditSurvey extends BaseClass{
     }
     public BF_Manage_Surveys click_SaveButton() throws Throwable {
     	Action.click(driver, saveButton);
+    	System.out.println("Click Save survey button");
     	return new BF_Manage_Surveys();
     }
     
