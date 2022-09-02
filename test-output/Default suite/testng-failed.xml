@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
+    <classes>
+      <class name="com.checkerSoftware.testCases.Email_Survey_Updated_In_Survey_Hindi_Language_">
+        <methods>
+          <include name="Asetup"/>
+          <include name="CeditSurvey"/>
+          <include name="loadConfig"/>
+          <include name="BcreateNewSampleRowEmail"/>
+          <include name="Validate_Thankyou_EMail"/>
+          <include name="DxEmailLogin_SurveySubmit"/>
+        </methods>
+      </class> <!-- com.checkerSoftware.testCases.Email_Survey_Updated_In_Survey_Hindi_Language_ -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
