@@ -3,26 +3,16 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="com.checkerSoftware.testCases.SMS_Survey_Auto_Test">
+      <class name="com.checkerSoftware.testCases.Email_Survey_Updated_In_Survey_Body_Auto_Test">
         <methods>
-          <include name="setup"/>
-          <include name="sendSurveyInvitationBySMS"/>
-          <include name="loadConfig"/>
-          <include name="tearDown"/>
-          <include name="createNewSampleRowSMS"/>
-        </methods>
-      </class> <!-- com.checkerSoftware.testCases.SMS_Survey_Auto_Test -->
-      <class name="com.checkerSoftware.testCases.Email_Survey_Auto_Test">
-        <methods>
-          <include name="tearDown"/>
-          <include name="ExValidateEmailSurvey_OnServer"/>
+          <include name="Validate_Thankyou_EMail"/>
           <include name="BcreateNewSampleRowEmail"/>
           <include name="loadConfig"/>
-          <include name="DxEmailLogin_SurveySubmit"/>
           <include name="Asetup"/>
-          <include name="CsendSurveyInvitationByEmail"/>
+          <include name="CeditSurvey"/>
+          <include name="DxEmailLogin_SurveySubmit"/>
         </methods>
-      </class> <!-- com.checkerSoftware.testCases.Email_Survey_Auto_Test -->
+      </class> <!-- com.checkerSoftware.testCases.Email_Survey_Updated_In_Survey_Body_Auto_Test -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

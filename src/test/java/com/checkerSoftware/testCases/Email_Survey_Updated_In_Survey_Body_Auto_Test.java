@@ -129,9 +129,11 @@ public class Email_Survey_Updated_In_Survey_Body_Auto_Test extends BaseClass{
 		System.out.println("================= Test Case 04 LoginMail_and_SubmitSurvey ==== Starts=================");	
 		WebDriverManager.edgedriver().setup();
 		WebDriver driver = new EdgeDriver();
+		System.out.print("Driver opnes Edge driver");
 		
 		driver.get("https://outlook.office.com/mail/");
 		System.out.println("Opens the mail Inbox");
+		System.out.print("Driver opnes Mail Inbox");
 		driver.manage().window().maximize();
 		Action.implicitWait(driver, 30);
 		Action.pageLoadTimeouts(driver, 30);
@@ -143,9 +145,9 @@ public class Email_Survey_Updated_In_Survey_Body_Auto_Test extends BaseClass{
 		String EmailSubjectWith_TextCode_Value = GetTextCode_Return_textCodeValue(EmailSubjectWith_TextCode);
 		String[] EmailSubject_Split = EmailSubjectWith_TextCode_Value.split(" ");
 		String EmailSubject_To_Search_In_Inbox = EmailSubject_Split[0]+" "+EmailSubject_Split[1];
-		System.out.println("Serching Checker Survey inviatation mail with mail Subject as: ["+EmailSubject_To_Search_In_Inbox+"]");
+		System.out.println("Searching Checker Survey inviatation mail with mail Subject as: ["+EmailSubject_To_Search_In_Inbox+"]");
 		driver.findElement(By.xpath("//*[@class='customScrollBar BW6l9']/div//*[contains(@aria-label,'"+ EmailSubject_To_Search_In_Inbox +"')]")).click();
-		System.out.println("Finds the survey");
+		
 		// 2 Validate Email Subject of invitation Email
 		String emailSubjectForInviation = driver.findElement(By.xpath("//*[@class='_5FqYX HnNdo']")).getText();
 		
@@ -154,7 +156,8 @@ public class Email_Survey_Updated_In_Survey_Body_Auto_Test extends BaseClass{
 		
 		String email_Subject_WeProvideInSurveyWithTextCode_Value_ExtraSpaceEliminate = email_Subject_WeProvideInSurveyWithTextCode_Value.replace("   ", " ");
 		Assert.assertEquals(emailSubjectForInviation, email_Subject_WeProvideInSurveyWithTextCode_Value_ExtraSpaceEliminate, "Mismatch with Email Subject for Survey");
-		System.out.println("Successfully validate subject");
+		System.out.println("Finds the mail servey with mail subject: ["+emailSubjectForInviation+"]");
+		System.out.println("***Successfully validate subject***");
 		
 		
 		  Thread.sleep(5000);
@@ -169,18 +172,24 @@ public class Email_Survey_Updated_In_Survey_Body_Auto_Test extends BaseClass{
 		  String EMail_Sender_Address = EMail_Sender_AddressBeforeSplit.replace(">","");
 		  
 		  if(prop.getProperty("WorkingURL").equalsIgnoreCase("Testing")) {
+			  System.out.println("Checking Email from should be "+prop.getProperty("From_Name_Testing"));
 		  Assert.assertEquals(From_Name, prop.getProperty("From_Name_Testing"),"Mismatch with From'Name"); }
 		  if(prop.getProperty("WorkingURL").equalsIgnoreCase("preProd")) {
+			  System.out.println("Checking Email from should be "+prop.getProperty("From_Name_preProd"));
 		  Assert.assertEquals(From_Name, prop.getProperty("From_Name_preProd"),"Mismatch with From'Name"); }
-		  System.out.println("Successfully validate From'Name");
+		  
+		  System.out.println("***Successfully validate From'Name***");
 		  
 		  // 10 EMail of sender of invitation Email
 		  
 		  if(prop.getProperty("WorkingURL").equalsIgnoreCase("Testing")) {
+			  System.out.println("Checking Email Sender should be "+prop.getProperty("Email_Sender_Testing"));
 		  Assert.assertEquals(EMail_Sender_Address,prop.getProperty("Email_Sender_Testing"),"Mismatch with Email sender Address in Testing"); }
 		  if(prop.getProperty("WorkingURL").equalsIgnoreCase("preProd")) {
+			  System.out.println("Checking Email Sender should be "+prop.getProperty("Email_Sender_preProd"));
 		  Assert.assertEquals(EMail_Sender_Address,prop.getProperty("Email_Sender_preProd"),"Mismatch with Email sender Address in PreProduction"); }
-		  System.out.println("Successfully validate EMail of sender");
+		  
+		  System.out.println("***Successfully validate EMail of sender***");
 		  
 		  // 4 Validate Email Body of invitation Email 
 		  Thread.sleep(10000); 
@@ -198,17 +207,21 @@ public class Email_Survey_Updated_In_Survey_Body_Auto_Test extends BaseClass{
 		  String emailBodyWeProvideInSurvey_With_TextCode_Value = GetTextCode_Return_textCodeValue(emailBodyWeProvideInSurvey_With_TextCode);
 		  System.out.println("Email body in Inbox is: "+emailBodyInMailInbox);
 		  Assert.assertEquals(emailBodyInMailInbox,emailBodyWeProvideInSurvey_With_TextCode_Value,"Mismatch with Email body with respect to We provide in survey");
-		  System.out.println("Successfully validate Email body");
+		  System.out.println("***Successfully validate Email body***");
 		  
 		  // 6 Validate Link Text in Invitation Email 
 		  WebElement mailInbox_LinkTextInInvitationMail = driver.findElement(By.xpath("//*[@aria-label='Message body']/div/div/div/font/a"));
 		  if(mailInbox_LinkTextInInvitationMail.getText().equalsIgnoreCase(prop.getProperty("LinkTextDefault"))) {
+			  System.out.println("No value provided for link Text So it Must be Default");
+			  System.out.println("Get's the default value for link text as: ["+mailInbox_LinkTextInInvitationMail.getText()+"]");
 		  Assert.assertEquals(mailInbox_LinkTextInInvitationMail.getText(),prop.getProperty("LinkTextDefault"), "Mismatch with Default Link Text"); }
 		  if(mailInbox_LinkTextInInvitationMail.getText().equalsIgnoreCase(prop.getProperty("LinkText"))) {
+			  System.out.println("Checking for link text as ["+prop.getProperty("LinkText")+"]");
 		  Assert.assertEquals(mailInbox_LinkTextInInvitationMail.getText(),prop.getProperty("LinkText"),"Mismatch with Link Text with respect to We provide in survey"); 
+		       System.out.println("Gets the link text from Mail as ["+mailInbox_LinkTextInInvitationMail.getText()+"]");
 		  }
+		  System.out.println("***Successfully validate Link Text***");   
 		  
-		  System.out.println("Successfully validate Link Text"); 
 		  String surveyLink = mailInbox_LinkTextInInvitationMail.getAttribute("href");
 		  driver.get(surveyLink);
 		  
@@ -220,10 +233,10 @@ public class Email_Survey_Updated_In_Survey_Body_Auto_Test extends BaseClass{
 		  } 
 		  Select select_Laptop_Dropdown = new Select(select_Laptop);
 		  select_Laptop_Dropdown.selectByVisibleText("HP");
-		  System.out.println("User select-*Which laptop you are using- As HP");
+		  
 		  
 		  //-------------Here user select--2. On average, how many days do you spend on your laptop per week?--As--4/week------//
-		  driver.findElement(By.xpath("//div[@class='radioAnswersDiv']/div[4]/span")).click(); System.out.println("Here user select--2.  On average, how many days do you spend on your laptop per week?--As--4/week");
+		  driver.findElement(By.xpath("//div[@class='radioAnswersDiv']/div[4]/span")).click(); 
 		  
 		  //-------------here user select--3.*how's your experience, for the service provide by you laptop company--Here we select option 1 and 3----// 
 		  for(int i=1; i<4; i+=2) {
@@ -232,9 +245,7 @@ public class Email_Survey_Updated_In_Survey_Body_Auto_Test extends BaseClass{
 		  } else { driver.findElement(By.xpath("//table[@class='checkboxes_answers_table noanswer_obj349815 max-multiple']/tbody/tr["+ (i) + "]/td/span/label/input")).click(); 
 		  } 
 		  } 
-		  System.out.println("here user select--3.*how's your experience, for the service provide by you laptop company--- Here we select option 1 and 3"
-		  );
-		  
+		
 		  //-------------Here user Select Time as Now------------------------------------------------------------------------------------------------//
 		  driver.findElement(By.xpath("//a[@name='todayDate']")).click();
 		  
@@ -249,31 +260,41 @@ public class Email_Survey_Updated_In_Survey_Body_Auto_Test extends BaseClass{
 		  //Try 
 		  List<WebElement> ThankYouMassage_RightAfter_FillingSurvey_Lines = driver.findElements(By.
 		  xpath("//*[@class='_container_ main-div-bg']/div/form/span/center/h1/p"));
-		  String ThankYou_Massage =""; for(WebElement ThankyouMassageLines : ThankYouMassage_RightAfter_FillingSurvey_Lines) { 
+		  String ThankYou_Massage =""; 
+		  for(WebElement ThankyouMassageLines : ThankYouMassage_RightAfter_FillingSurvey_Lines) { 
 			  ThankYou_Massage +=ThankyouMassageLines.getText(); } 
 		  String ThankYouMassage_RightAfter_FillingSurvey = ThankYou_Massage.trim();
+		  System.out.println("Thank you massage it gets from Web ["+ThankYouMassage_RightAfter_FillingSurvey+"]");
 		  
 		  
 		  String thankYouMassageWeProvideInSurvey_With_TextCode = prop.getProperty("ThankYouMessage_right_after_FillingTheSurvey"); 
 		  String thankYouMassageWeProvideInSurvey_With_TextCode_Value =GetTextCode_Return_textCodeValue(thankYouMassageWeProvideInSurvey_With_TextCode);
-		  
+		  System.out.println("Thank you massage We provide in survey ["+thankYouMassageWeProvideInSurvey_With_TextCode+"]");
+		  System.out.println("Thank you massage it gets from Web ["+ThankYouMassage_RightAfter_FillingSurvey+"]");
 		  Assert.assertEquals(ThankYouMassage_RightAfter_FillingSurvey, thankYouMassageWeProvideInSurvey_With_TextCode_Value, "Mismatch with Thankyou massage right after filling Survey"); 
-		  System.out.println("Successfully validate ThankYou Massage right after filling survey");
+		  System.out.println("***Successfully validate ThankYou Massage right after filling survey***");
 		  
 		  // 8 
 		  String waitString = prop.getProperty("Waitbefore_going_ToTheLinkIn_Seconds"); 
 		  int waitingTime = Integer.parseInt(waitString) * 1000;
 		  
-		  Thread.sleep(waitingTime); String redirectingURL = driver.getCurrentUrl();
+		  Thread.sleep(waitingTime); 
+		  String redirectingURL = driver.getCurrentUrl();
+		  System.out.println("Redirecting URL we provide in Survey ["+prop.getProperty("AfterThanking_GoTo_ThisLink")+"]");
+		  System.out.println("Redirecting URL We get from GetURL method ["+redirectingURL+"]");
 		  Assert.assertEquals(redirectingURL, prop.getProperty("AfterThanking_GoTo_ThisLink")); 
 		  stopTime =(System.currentTimeMillis()); 
 		  executionTime = ((stopTime - startTime));
-		  System.out.println("The Submission time  is "+executionTime ); driver.quit();
+		  System.out.println("Pause time we provide in survey For thank you Massage: ["+prop.getProperty("Waitbefore_going_ToTheLinkIn_Seconds")+"]");
+		  System.out.println("Pause time we calculate from submitting survey to get redirecting URl is: ["+executionTime+"]"); 
+		  driver.quit();
+		  System.out.println("================= Test Case 04 LoginMail_and_SubmitSurvey ==== Ends=================");
 		 
 		
 	}
     @Test(dependsOnMethods = "DxEmailLogin_SurveySubmit")
 	public void Validate_Thankyou_EMail() throws InterruptedException {
+    	System.out.println("================= Test Case 04 Validaye Thank you Email ==== Starts=================");
 		WebDriverManager.edgedriver().setup();
 		WebDriver driver = new EdgeDriver();
 		
@@ -298,15 +319,19 @@ public class Email_Survey_Updated_In_Survey_Body_Auto_Test extends BaseClass{
 		String ThankYou_Massage_emailSubjectForInviation = driver.findElement(By.xpath("//*[@class='_5FqYX HnNdo']")).getText();
 		String ThankYou_Massage_emailSubject_WeProvide_With_TextCode = prop.getProperty("ThankYouEmail_Message_Email_Subject");
 		String ThankYou_Massage_emailSubject_WeProvide_With_TextCode_Value = GetTextCode_Return_textCodeValue(ThankYou_Massage_emailSubject_WeProvide_With_TextCode);
+		System.out.println("Thank you massage Email Subject we provide in survey: ["+ThankYou_Massage_emailSubject_WeProvide_With_TextCode+"]");
+		System.out.println("Thank you massage Email Subject we Get from Mail: ["+ThankYou_Massage_emailSubjectForInviation+"]");
 		Assert.assertEquals(ThankYou_Massage_emailSubjectForInviation, ThankYou_Massage_emailSubject_WeProvide_With_TextCode_Value, "MisMatch ThankYou Massage E Mail Subject");
-		System.out.println("Successfully validate ThankYou Massage Mail subject");
+		System.out.println("***Successfully validate ThankYou Massage Mail subject***");
 		
 		// 13 Validate Thank you Massage Mail Body
 		String ThankYou_Massage_emailBodyInMailInbox = driver.findElement(By.xpath("//*[@aria-label='Message body']/div/div/div")).getText();
 		String ThankYou_Massage_emailBody_WeProvide_With_TextCode = prop.getProperty("ThankYouEmail_Message_Body_to_be_Sent_by_Email");
 		String ThankYou_Massage_emailBody_WeProvide_With_TextCode_Value = GetTextCode_Return_textCodeValue(ThankYou_Massage_emailBody_WeProvide_With_TextCode);
+		System.out.println("Thank you massage Email Body we provide in survey: ["+ThankYou_Massage_emailBody_WeProvide_With_TextCode+"]");
+		System.out.println("Thank you massage Email Body we Get from mail: ["+ThankYou_Massage_emailBodyInMailInbox+"]");
 		Assert.assertEquals(ThankYou_Massage_emailBodyInMailInbox, ThankYou_Massage_emailBody_WeProvide_With_TextCode_Value, "MisMatch ThankYou Massage E Mail Body");
-		System.out.println("Successfully validate Thank you Massage Mail Body");
+		System.out.println("***Successfully validate Thank you Massage Mail Body***");
 		
 		Thread.sleep(5000);
 		// 9 from Validation From'Name 
@@ -325,7 +350,7 @@ public class Email_Survey_Updated_In_Survey_Body_Auto_Test extends BaseClass{
 			} if(prop.getProperty("WorkingURL").equalsIgnoreCase("preProd")) {
 				Assert.assertEquals(From_Name, prop.getProperty("From_Name_preProd"), "Mismatch with From'Name");
 			}
-			  System.out.println("Successfully validate From'Name");
+			  System.out.println("***Successfully validate From'Name***");
 				
 		// 10 EMail of sender
 				
@@ -334,8 +359,9 @@ public class Email_Survey_Updated_In_Survey_Body_Auto_Test extends BaseClass{
 				  }  if(prop.getProperty("WorkingURL").equalsIgnoreCase("preProd")) {
 					  Assert.assertEquals(EMail_Sender_Address, prop.getProperty("Email_Sender_preProd"), "Mismatch with Email sender Address in PreProduction");
 				  }
-				System.out.println("Successfully validate EMail of sender");
+				System.out.println("***Successfully validate EMail of sender***");
 		driver.quit();
+		System.out.println("================= Test Case 05 Validaye Thank you Email ==== Ends=================");
 		
 	}
 	
