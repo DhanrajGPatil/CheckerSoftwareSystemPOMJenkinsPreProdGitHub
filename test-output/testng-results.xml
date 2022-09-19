@@ -1,151 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="8" passed="6" failed="2" skipped="0">
+<testng-results ignored="0" total="10" passed="10" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-09-13T13:13:10 IST" name="Suite" finished-at="2022-09-13T13:17:29 IST" duration-ms="259207">
+  <suite started-at="2022-09-19T11:29:45 IST" name="Suite" finished-at="2022-09-19T11:35:07 IST" duration-ms="322064">
     <groups>
     </groups>
-    <test started-at="2022-09-13T13:13:10 IST" name="Email_Survey_Default" finished-at="2022-09-13T13:15:18 IST" duration-ms="128664">
+    <test started-at="2022-09-19T11:29:45 IST" name="Email_Survey_Default" finished-at="2022-09-19T11:32:11 IST" duration-ms="146209">
       <class name="com.checkerSoftware.testCases.Email_Survey_Updated_In_Survey_Body_Auto_Test">
-        <test-method is-config="true" signature="loadConfig()[pri:0, instance:com.checkerSoftware.testCases.Email_Survey_Updated_In_Survey_Body_Auto_Test@402c4085]" started-at="2022-09-13T13:13:10 IST" name="loadConfig" finished-at="2022-09-13T13:13:10 IST" duration-ms="30" status="PASS">
+        <test-method is-config="true" signature="loadConfig()[pri:0, instance:com.checkerSoftware.testCases.Email_Survey_Updated_In_Survey_Body_Auto_Test@402c4085]" started-at="2022-09-19T11:29:45 IST" name="loadConfig" finished-at="2022-09-19T11:29:45 IST" duration-ms="27" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loadConfig -->
-        <test-method is-config="true" signature="Asetup()[pri:0, instance:com.checkerSoftware.testCases.Email_Survey_Updated_In_Survey_Body_Auto_Test@402c4085]" started-at="2022-09-13T13:13:10 IST" name="Asetup" finished-at="2022-09-13T13:13:20 IST" duration-ms="10278" status="PASS">
+        <test-method is-config="true" signature="Asetup()[pri:0, instance:com.checkerSoftware.testCases.Email_Survey_Updated_In_Survey_Body_Auto_Test@402c4085]" started-at="2022-09-19T11:29:45 IST" name="Asetup" finished-at="2022-09-19T11:29:53 IST" duration-ms="8222" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Asetup -->
-        <test-method signature="BcreateNewSampleRowEmail()[pri:0, instance:com.checkerSoftware.testCases.Email_Survey_Updated_In_Survey_Body_Auto_Test@402c4085]" started-at="2022-09-13T13:13:20 IST" name="BcreateNewSampleRowEmail" finished-at="2022-09-13T13:13:31 IST" duration-ms="11055" status="PASS">
+        <test-method signature="BcreateNewSampleRowEmail()[pri:0, instance:com.checkerSoftware.testCases.Email_Survey_Updated_In_Survey_Body_Auto_Test@402c4085]" started-at="2022-09-19T11:29:53 IST" name="BcreateNewSampleRowEmail" finished-at="2022-09-19T11:30:02 IST" duration-ms="8912" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BcreateNewSampleRowEmail -->
-        <test-method signature="CeditSurvey()[pri:0, instance:com.checkerSoftware.testCases.Email_Survey_Updated_In_Survey_Body_Auto_Test@402c4085]" started-at="2022-09-13T13:13:31 IST" name="CeditSurvey" finished-at="2022-09-13T13:14:20 IST" depends-on-methods="com.checkerSoftware.testCases.Email_Survey_Updated_In_Survey_Body_Auto_Test.BcreateNewSampleRowEmail" duration-ms="48534" status="PASS">
+        <test-method signature="CeditSurvey()[pri:0, instance:com.checkerSoftware.testCases.Email_Survey_Updated_In_Survey_Body_Auto_Test@402c4085]" started-at="2022-09-19T11:30:02 IST" name="CeditSurvey" finished-at="2022-09-19T11:30:50 IST" depends-on-methods="com.checkerSoftware.testCases.Email_Survey_Updated_In_Survey_Body_Auto_Test.BcreateNewSampleRowEmail" duration-ms="48052" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CeditSurvey -->
-        <test-method signature="DxEmailLogin_SurveySubmit()[pri:0, instance:com.checkerSoftware.testCases.Email_Survey_Updated_In_Survey_Body_Auto_Test@402c4085]" started-at="2022-09-13T13:14:20 IST" name="DxEmailLogin_SurveySubmit" finished-at="2022-09-13T13:15:03 IST" depends-on-methods="com.checkerSoftware.testCases.Email_Survey_Updated_In_Survey_Body_Auto_Test.CeditSurvey" duration-ms="43086" status="PASS">
+        <test-method signature="DxEmailLogin_SurveySubmit()[pri:0, instance:com.checkerSoftware.testCases.Email_Survey_Updated_In_Survey_Body_Auto_Test@402c4085]" started-at="2022-09-19T11:30:50 IST" name="DxEmailLogin_SurveySubmit" finished-at="2022-09-19T11:31:44 IST" depends-on-methods="com.checkerSoftware.testCases.Email_Survey_Updated_In_Survey_Body_Auto_Test.CeditSurvey" duration-ms="54471" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- DxEmailLogin_SurveySubmit -->
-        <test-method signature="Validate_Thankyou_EMail()[pri:0, instance:com.checkerSoftware.testCases.Email_Survey_Updated_In_Survey_Body_Auto_Test@402c4085]" started-at="2022-09-13T13:15:03 IST" name="Validate_Thankyou_EMail" finished-at="2022-09-13T13:15:18 IST" depends-on-methods="com.checkerSoftware.testCases.Email_Survey_Updated_In_Survey_Body_Auto_Test.DxEmailLogin_SurveySubmit" duration-ms="15620" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[MisMatch ThankYou Massage E Mail Subject expected [Thank you Raj. ] but found [Thank you Raj.]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: MisMatch ThankYou Massage E Mail Subject expected [Thank you Raj. ] but found [Thank you Raj.]
-at org.testng.Assert.fail(Assert.java:110)
-at org.testng.Assert.failNotEquals(Assert.java:1413)
-at org.testng.Assert.assertEqualsImpl(Assert.java:149)
-at org.testng.Assert.assertEquals(Assert.java:131)
-at org.testng.Assert.assertEquals(Assert.java:655)
-at com.checkerSoftware.testCases.Email_Survey_Updated_In_Survey_Body_Auto_Test.Validate_Thankyou_EMail(Email_Survey_Updated_In_Survey_Body_Auto_Test.java:324)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-at org.testng.TestRunner.privateRun(TestRunner.java:806)
-at org.testng.TestRunner.run(TestRunner.java:601)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
-at org.testng.SuiteRunner.run(SuiteRunner.java:330)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
-at org.testng.TestNG.runSuites(TestNG.java:1099)
-at org.testng.TestNG.run(TestNG.java:1067)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+        <test-method signature="Validate_Thankyou_EMail()[pri:0, instance:com.checkerSoftware.testCases.Email_Survey_Updated_In_Survey_Body_Auto_Test@402c4085]" started-at="2022-09-19T11:31:44 IST" name="Validate_Thankyou_EMail" finished-at="2022-09-19T11:32:11 IST" depends-on-methods="com.checkerSoftware.testCases.Email_Survey_Updated_In_Survey_Body_Auto_Test.DxEmailLogin_SurveySubmit" duration-ms="26449" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Validate_Thankyou_EMail -->
       </class> <!-- com.checkerSoftware.testCases.Email_Survey_Updated_In_Survey_Body_Auto_Test -->
     </test> <!-- Email_Survey_Default -->
-    <test started-at="2022-09-13T13:15:19 IST" name="Email_Survey_HINDI" finished-at="2022-09-13T13:17:29 IST" duration-ms="130512">
+    <test started-at="2022-09-19T11:32:11 IST" name="Email_Survey_HINDI" finished-at="2022-09-19T11:34:32 IST" duration-ms="141676">
       <class name="com.checkerSoftware.testCases.Email_Survey_Updated_In_Survey_Hindi_Language_">
-        <test-method is-config="true" signature="loadConfig()[pri:0, instance:com.checkerSoftware.testCases.Email_Survey_Updated_In_Survey_Hindi_Language_@4007f65e]" started-at="2022-09-13T13:15:19 IST" name="loadConfig" finished-at="2022-09-13T13:15:19 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="loadConfig()[pri:0, instance:com.checkerSoftware.testCases.Email_Survey_Updated_In_Survey_Hindi_Language_@4007f65e]" started-at="2022-09-19T11:32:11 IST" name="loadConfig" finished-at="2022-09-19T11:32:11 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loadConfig -->
-        <test-method is-config="true" signature="Asetup()[pri:0, instance:com.checkerSoftware.testCases.Email_Survey_Updated_In_Survey_Hindi_Language_@4007f65e]" started-at="2022-09-13T13:15:19 IST" name="Asetup" finished-at="2022-09-13T13:15:26 IST" duration-ms="7963" status="PASS">
+        <test-method is-config="true" signature="Asetup()[pri:0, instance:com.checkerSoftware.testCases.Email_Survey_Updated_In_Survey_Hindi_Language_@4007f65e]" started-at="2022-09-19T11:32:11 IST" name="Asetup" finished-at="2022-09-19T11:32:18 IST" duration-ms="7667" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Asetup -->
-        <test-method signature="BcreateNewSampleRowEmail()[pri:0, instance:com.checkerSoftware.testCases.Email_Survey_Updated_In_Survey_Hindi_Language_@4007f65e]" started-at="2022-09-13T13:15:26 IST" name="BcreateNewSampleRowEmail" finished-at="2022-09-13T13:15:38 IST" duration-ms="11861" status="PASS">
+        <test-method signature="BcreateNewSampleRowEmail()[pri:0, instance:com.checkerSoftware.testCases.Email_Survey_Updated_In_Survey_Hindi_Language_@4007f65e]" started-at="2022-09-19T11:32:18 IST" name="BcreateNewSampleRowEmail" finished-at="2022-09-19T11:32:27 IST" duration-ms="8417" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BcreateNewSampleRowEmail -->
-        <test-method signature="CeditSurvey()[pri:0, instance:com.checkerSoftware.testCases.Email_Survey_Updated_In_Survey_Hindi_Language_@4007f65e]" started-at="2022-09-13T13:15:38 IST" name="CeditSurvey" finished-at="2022-09-13T13:16:26 IST" depends-on-methods="com.checkerSoftware.testCases.Email_Survey_Updated_In_Survey_Hindi_Language_.BcreateNewSampleRowEmail" duration-ms="48030" status="PASS">
+        <test-method signature="CeditSurvey()[pri:0, instance:com.checkerSoftware.testCases.Email_Survey_Updated_In_Survey_Hindi_Language_@4007f65e]" started-at="2022-09-19T11:32:27 IST" name="CeditSurvey" finished-at="2022-09-19T11:33:16 IST" depends-on-methods="com.checkerSoftware.testCases.Email_Survey_Updated_In_Survey_Hindi_Language_.BcreateNewSampleRowEmail" duration-ms="48878" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CeditSurvey -->
-        <test-method signature="DxEmailLogin_SurveySubmit()[pri:0, instance:com.checkerSoftware.testCases.Email_Survey_Updated_In_Survey_Hindi_Language_@4007f65e]" started-at="2022-09-13T13:16:26 IST" name="DxEmailLogin_SurveySubmit" finished-at="2022-09-13T13:17:12 IST" depends-on-methods="com.checkerSoftware.testCases.Email_Survey_Updated_In_Survey_Hindi_Language_.CeditSurvey" duration-ms="45744" status="PASS">
+        <test-method signature="DxEmailLogin_SurveySubmit()[pri:0, instance:com.checkerSoftware.testCases.Email_Survey_Updated_In_Survey_Hindi_Language_@4007f65e]" started-at="2022-09-19T11:33:16 IST" name="DxEmailLogin_SurveySubmit" finished-at="2022-09-19T11:34:07 IST" depends-on-methods="com.checkerSoftware.testCases.Email_Survey_Updated_In_Survey_Hindi_Language_.CeditSurvey" duration-ms="50731" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- DxEmailLogin_SurveySubmit -->
-        <test-method signature="Validate_Thankyou_EMail()[pri:0, instance:com.checkerSoftware.testCases.Email_Survey_Updated_In_Survey_Hindi_Language_@4007f65e]" started-at="2022-09-13T13:17:12 IST" name="Validate_Thankyou_EMail" finished-at="2022-09-13T13:17:29 IST" depends-on-methods="com.checkerSoftware.testCases.Email_Survey_Updated_In_Survey_Hindi_Language_.DxEmailLogin_SurveySubmit" duration-ms="16904" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[MisMatch ThankYou Massage E Mail Subject expected [Thank you Raj. ] but found [Thank you Raj.]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: MisMatch ThankYou Massage E Mail Subject expected [Thank you Raj. ] but found [Thank you Raj.]
-at org.testng.Assert.fail(Assert.java:110)
-at org.testng.Assert.failNotEquals(Assert.java:1413)
-at org.testng.Assert.assertEqualsImpl(Assert.java:149)
-at org.testng.Assert.assertEquals(Assert.java:131)
-at org.testng.Assert.assertEquals(Assert.java:655)
-at com.checkerSoftware.testCases.Email_Survey_Updated_In_Survey_Hindi_Language_.Validate_Thankyou_EMail(Email_Survey_Updated_In_Survey_Hindi_Language_.java:338)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-at org.testng.TestRunner.privateRun(TestRunner.java:806)
-at org.testng.TestRunner.run(TestRunner.java:601)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
-at org.testng.SuiteRunner.run(SuiteRunner.java:330)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
-at org.testng.TestNG.runSuites(TestNG.java:1099)
-at org.testng.TestNG.run(TestNG.java:1067)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+        <test-method signature="Validate_Thankyou_EMail()[pri:0, instance:com.checkerSoftware.testCases.Email_Survey_Updated_In_Survey_Hindi_Language_@4007f65e]" started-at="2022-09-19T11:34:07 IST" name="Validate_Thankyou_EMail" finished-at="2022-09-19T11:34:32 IST" depends-on-methods="com.checkerSoftware.testCases.Email_Survey_Updated_In_Survey_Hindi_Language_.DxEmailLogin_SurveySubmit" duration-ms="25966" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Validate_Thankyou_EMail -->
       </class> <!-- com.checkerSoftware.testCases.Email_Survey_Updated_In_Survey_Hindi_Language_ -->
     </test> <!-- Email_Survey_HINDI -->
+    <test started-at="2022-09-19T11:34:33 IST" name="SMS SURVEY " finished-at="2022-09-19T11:35:07 IST" duration-ms="34122">
+      <class name="com.checkerSoftware.testCases.SMS_Survey_Auto_Test">
+        <test-method is-config="true" signature="loadConfig()[pri:0, instance:com.checkerSoftware.testCases.SMS_Survey_Auto_Test@4e5ed836]" started-at="2022-09-19T11:34:33 IST" name="loadConfig" finished-at="2022-09-19T11:34:33 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loadConfig -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.checkerSoftware.testCases.SMS_Survey_Auto_Test@4e5ed836]" started-at="2022-09-19T11:34:33 IST" name="setup" finished-at="2022-09-19T11:34:39 IST" duration-ms="6858" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="createNewSampleRowSMS()[pri:0, instance:com.checkerSoftware.testCases.SMS_Survey_Auto_Test@4e5ed836]" started-at="2022-09-19T11:34:39 IST" name="createNewSampleRowSMS" finished-at="2022-09-19T11:34:51 IST" duration-ms="11528" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createNewSampleRowSMS -->
+        <test-method signature="sendSurveyInvitationBySMS()[pri:0, instance:com.checkerSoftware.testCases.SMS_Survey_Auto_Test@4e5ed836]" started-at="2022-09-19T11:34:51 IST" name="sendSurveyInvitationBySMS" finished-at="2022-09-19T11:35:06 IST" depends-on-methods="com.checkerSoftware.testCases.SMS_Survey_Auto_Test.createNewSampleRowSMS" duration-ms="14730" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- sendSurveyInvitationBySMS -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.checkerSoftware.testCases.SMS_Survey_Auto_Test@4e5ed836]" started-at="2022-09-19T11:35:06 IST" name="tearDown" finished-at="2022-09-19T11:35:07 IST" duration-ms="998" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.checkerSoftware.testCases.SMS_Survey_Auto_Test -->
+    </test> <!-- SMS SURVEY  -->
   </suite> <!-- Suite -->
 </testng-results>

@@ -30,6 +30,7 @@ public class BF_Manage_Surveysz_zSendSurveyInvitationBySMS extends BaseClass{
 			if(samples.getText().equalsIgnoreCase(prop.getProperty("phoneNumber"))) {
 				WebElement sample_Click = driver.findElement(By.xpath("//table[@id='table_rows']/tbody/tr["+(e)+"]/td[1]/input"));
 				sample_Click.click();
+				System.out.println("Driver checks for Phone Number in sample and click send SMS Survey");
 				//--------Here we click Send option-------------------//
 				Action.click(driver, send);
 				

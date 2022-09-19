@@ -22,12 +22,14 @@ public class E_Operation extends BaseClass{
 	public Eh_Operation_HandleFinishedReviews clickOnHandleFinishedReviws() throws Throwable {
 
 		Action.click(driver, handleFinishedReviews);
+		System.out.println("Driver Click's Handle Finished Reviews Tab");
 		return new Eh_Operation_HandleFinishedReviews();
 	}
 	
 	
 	public Ef_Operation_FieldSurvey clickFieldSurvey() throws Throwable {
 		Action.click(driver, fieldSurvey);
+		System.out.println("Driver Click's Field Survey Tab");
 		return new Ef_Operation_FieldSurvey();
 	}
 }

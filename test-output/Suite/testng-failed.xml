@@ -1,20 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Email_Survey_Default(failed)">
-    <classes>
-      <class name="com.checkerSoftware.testCases.Email_Survey_Updated_In_Survey_Body_Auto_Test">
-        <methods>
-          <include name="Validate_Thankyou_EMail"/>
-          <include name="BcreateNewSampleRowEmail"/>
-          <include name="loadConfig"/>
-          <include name="Asetup"/>
-          <include name="CeditSurvey"/>
-          <include name="DxEmailLogin_SurveySubmit"/>
-        </methods>
-      </class> <!-- com.checkerSoftware.testCases.Email_Survey_Updated_In_Survey_Body_Auto_Test -->
-    </classes>
-  </test> <!-- Email_Survey_Default(failed) -->
   <test thread-count="5" name="Email_Survey_HINDI(failed)">
     <classes>
       <class name="com.checkerSoftware.testCases.Email_Survey_Updated_In_Survey_Hindi_Language_">

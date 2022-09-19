@@ -65,9 +65,9 @@ public class BF_Manage_Surveysz_zSendSurveyInvitationByEmail extends BaseClass{
 		List<WebElement> email_List = driver.findElements(By.xpath("//table[@id='table_rows']/tbody/tr/td[13]"));
 		for(int a=0; a<email_List.size(); a++) {
 			WebElement email = email_List.get(a);
-			System.out.println(a);
+			
 			if(email.getText().equalsIgnoreCase(prop.getProperty("email"))) {
-				System.out.println(a);
+				
 				
 				driver.findElement(By.xpath("//table[@id='table_rows']/tbody/tr["+(a+1)+"]/td/input")).click();
 				

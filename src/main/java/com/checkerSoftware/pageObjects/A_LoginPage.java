@@ -27,18 +27,24 @@ public class A_LoginPage extends BaseClass {
 		if(prop.getProperty("WorkingURL").equalsIgnoreCase("Testing")) {
 			
 		Action.type(Username, prop.getProperty("userNameTesting"));
+		System.out.println("Driver Enter's the UserName for Testing Enviornment");
 		    
 		Action.type(Password, prop.getProperty("passWordTesting"));
+		System.out.println("Driver Enter's the Password for Testing Enviornment");
 		   
 		Action.click(driver, LOGIN);
+		System.out.println("Driver Click's the login button");
 		   
 		}else if(prop.getProperty("WorkingURL").equalsIgnoreCase("preProd")) {
 			
 		Action.type(Username, prop.getProperty("userNamePreprod"));
+		System.out.println("Driver Enter's the UserName for PreProduction Enviornment");
 			 
 		Action.type(Password, prop.getProperty("passWordPreprod"));
+		System.out.println("Driver Enter's the Password for PreProduction Enviornment");
 		    
 		Action.click(driver, LOGIN);
+		System.out.println("Driver Click's the login button");
 		   
 		}
 		

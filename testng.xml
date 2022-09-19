@@ -11,6 +11,11 @@
       <class name="com.checkerSoftware.testCases.Email_Survey_Updated_In_Survey_Hindi_Language_"/>
     </classes>
   </test> <!-- Test -->
+  <test name="SMS SURVEY ">
+    <classes>
+      <class name="com.checkerSoftware.testCases.SMS_Survey_Auto_Test"/>
+    </classes>
+  </test> <!-- Test -->
 
 
 </suite> <!-- Suite -->

@@ -26,6 +26,7 @@ public class BF_Manage_Surveys extends BaseClass {
 		for(WebElement client : client_name_list) {
 			if(client.getText().equalsIgnoreCase(prop.getProperty("clientName"))) {
 				client.click();
+				System.out.println("Driver select the Client as per Data in properties file");
 				break;
 			}
 		}
@@ -35,7 +36,7 @@ public class BF_Manage_Surveys extends BaseClass {
 		for(WebElement survey :survey_Name_List) {
 			if(survey.getText().equalsIgnoreCase(prop.getProperty("surveyNameHINDI"))) {
 				survey.click();
-				
+				System.out.println("Driver select the Survey as per Data in properties file");
 				break;
 			}
 		}
@@ -46,7 +47,7 @@ public class BF_Manage_Surveys extends BaseClass {
 		for(WebElement survey :survey_Name_List) {
 			if(survey.getText().equalsIgnoreCase(prop.getProperty("surveyName"))) {
 				survey.click();
-				
+				System.out.println("Driver select the Survey as per Data in properties file");
 				break;
 			}
 		}
@@ -61,9 +62,11 @@ public class BF_Manage_Surveys extends BaseClass {
 				// ---------------Here we click Mail icon----//
 				if(prop.getProperty("WorkingURL").equalsIgnoreCase("Testing")) {
 					driver.findElement(By.xpath("//table[@id='table_rows']/tbody/tr[" + (z + 1) + "]/td[21]/a")).click();
+					System.out.println("Driver Send Survey Invitation By Email for testing Enviornment");
 					} else {
 						driver.findElement(By.xpath("//table[@id='table_rows']/tbody/tr[" + (z + 1) + "]/td[20]/a"))
 						.click();
+						System.out.println("Driver Send Survey Invitation By Email for PreProduction Enviornment");
 					}
 				break;
 			}
@@ -80,9 +83,11 @@ public class BF_Manage_Surveys extends BaseClass {
 				// ---------------Here we click Mail icon----//
 				if(prop.getProperty("WorkingURL").equalsIgnoreCase("Testing")) {
 					driver.findElement(By.xpath("//table[@id='table_rows']/tbody/tr[" + (z + 1) + "]/td[21]/a")).click();
+					System.out.println("Driver Send Survey Invitation By Email for testing Enviornment");
 					} else {
 						driver.findElement(By.xpath("//table[@id='table_rows']/tbody/tr[" + (z + 1) + "]/td[20]/a"))
 						.click();
+						System.out.println("Driver Send Survey Invitation By Email for PreProduction Enviornment");
 					}
 				break;
 			}
@@ -146,8 +151,11 @@ public class BF_Manage_Surveys extends BaseClass {
 						//---------------Here we click Send Invitation by SMS icon----//
 						if(prop.getProperty("WorkingURL").equalsIgnoreCase("Testing")) {
 						driver.findElement(By.xpath("//table[@id='table_rows']/tbody/tr["+(d+1)+"]/td[20]/a")).click();
+						System.out.println("Driver Send Survey Invitation By SMS for Testing Enviornment");
+						
 						} else {
 							driver.findElement(By.xpath("//table[@id='table_rows']/tbody/tr["+(d+1)+"]/td[19]/a")).click();
+							System.out.println("Driver Send Survey Invitation By SMS for PreProduction Enviornment");
 						}
 						break;
 					}

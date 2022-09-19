@@ -26,10 +26,10 @@ public class B_Management extends BaseClass{
 	public BA_Manage_Clients clickOnClients() throws Throwable {
 		try {
 		Action.click(driver, Clients);
-		 
+		System.out.println("Driver Click's The Clients tab in Management");
 		} catch (Exception e) {
 			e.printStackTrace();
-			
+			System.out.println("Clients tab in Management is not Clickable");
 		}
 		return new BA_Manage_Clients();
 	}
@@ -37,10 +37,10 @@ public class B_Management extends BaseClass{
 	public BF_Manage_Surveys clickOnSurveys() throws Throwable {
 		try {
 		Action.click(driver, Surveys);
-		
+		System.out.println("Driver Click's The Surveys tab in Management");
 		} catch (Exception e) {
 			e.printStackTrace();
-			
+			System.out.println("Surveys tab in Management is not Clickable");
 		}
 		return new BF_Manage_Surveys();
 	}
@@ -48,10 +48,10 @@ public class B_Management extends BaseClass{
 	public BG_ManageM_Samples clickOnSamples() throws Throwable {
 		try {
 		Action.click(driver, Samples);
-		   
+		System.out.println("Driver Click's The Samples tab in Management");
 		} catch (Exception e) {
 			e.printStackTrace();
-			
+			System.out.println("Samples tab in Management is not Clickable");
 		}
 		return new BG_ManageM_Samples();
 	}

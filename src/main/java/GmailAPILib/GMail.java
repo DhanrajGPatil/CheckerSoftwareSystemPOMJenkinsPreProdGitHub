@@ -22,7 +22,6 @@ import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.jackson2.JacksonFactory;
-//import com.google.api.client.json.gson.GsonFactory;
 import com.google.api.client.util.store.FileDataStoreFactory;
 import com.google.api.services.gmail.Gmail;
 import com.google.api.services.gmail.GmailScopes;
@@ -32,10 +31,10 @@ import com.google.api.services.gmail.model.Thread;
 
 import io.restassured.path.json.JsonPath;
 
+
 public class GMail {
-	private static final String APPLICATION_NAME = "checkersoftware";
+    private static final String APPLICATION_NAME = "checker";
     private static final JsonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance();
-	//private static final JsonFactory JSON_FACTORY = GsonFactory.getDefaultInstance();
     private static final String USER_ID = "me";
     /**
      * Global instance of the scopes required by this quickstart.
@@ -112,24 +111,15 @@ public class GMail {
         try {
             Gmail service = getService();
             List<Message> messages = listMessagesMatchingQuery(service, USER_ID, query);
-            
             Message message = getMessage(service, USER_ID, messages, 0);
-            
             JsonPath jp = new JsonPath(message.toString());
-            
             String subject = jp.getString("payload.headers.find { it.name == 'Subject' }.value");
-            
             String body = new String(Base64.getDecoder().decode(jp.getString("payload.parts[0].body.data")));
             String link = null;
             String arr[] = body.split("\n");
-            
-            
             for(String s: arr) {
-            	
                 s = s.trim();
-                
                 if(s.startsWith("http") || s.startsWith("https")) {
-                	
                     link = s.trim();
                 }
             }
@@ -211,7 +201,7 @@ public class GMail {
     
     
     public static void main(String[] args) throws IOException, GeneralSecurityException {
-        HashMap<String, String> hm = getGmailData("Hi.!!! Raj we want to hear you, you've been invited for Survey.");
+        HashMap<String, String> hm = getGmailData("subject:Hi");
         System.out.println(hm.get("subject"));
         System.out.println("=================");
         System.out.println(hm.get("body"));
@@ -222,10 +212,10 @@ public class GMail {
         System.out.println("Total count of emails is :"+getTotalCountOfMails());
         
         System.out.println("=================");
-        boolean exist = isMailExist("Hi.!!! Raj we want to hear you, you've been invited for Survey.");
+        boolean exist = isMailExist("Hi"
+        		+ "");
         System.out.println("title exist or not: " + exist);
 
 
     }
-
 }

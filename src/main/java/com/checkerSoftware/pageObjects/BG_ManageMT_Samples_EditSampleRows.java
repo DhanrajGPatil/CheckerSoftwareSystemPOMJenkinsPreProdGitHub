@@ -20,6 +20,7 @@ public class BG_ManageMT_Samples_EditSampleRows extends BaseClass{
 	public BG_ManageMT_Samples_EditSamplesRows_AddNewRow clickOnaddNewRow() throws Throwable {
 		
 		Action.click(driver, addNewRow);
+		System.out.println("Driver Click's Add New Row Tab");
 		  
 		
 		return new BG_ManageMT_Samples_EditSamplesRows_AddNewRow();
@@ -28,6 +29,7 @@ public class BG_ManageMT_Samples_EditSampleRows extends BaseClass{
 	public A_MainMenu clickONBackTOMainMenu() throws Throwable {
 		
 		Action.click(driver, backToMainMenu);
+		System.out.println("Driver Click's Back to Main Menu Tab");
 		  
 		
 		return new A_MainMenu();

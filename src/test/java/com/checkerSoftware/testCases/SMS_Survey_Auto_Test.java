@@ -39,19 +39,18 @@ public class SMS_Survey_Auto_Test extends BaseClass {
 	
 	@BeforeClass
 	public void setup() throws Throwable{
-		
+		System.out.println("================= Test Case 01 SetUp ==== Starts=================");
 		launchApp();
 		loginPage = new A_LoginPage();
 		mainMenu = loginPage.Login();
+		System.out.println("================= Test Case 01 SetUp ==== Ends=================");
 	}
 	
 	
 	
 	@Test
 	public void createNewSampleRowSMS() throws Throwable {
-		
-		
-		      
+		System.out.println("================= Test Case 02 Create New Sample ==== Start=================");
 		manageMent = mainMenu.clickOnManagement();
 		manageSamples = manageMent.clickOnSamples();
 		manageEditSampleRow = manageSamples.ClickOnEditSampleRowsSMS();

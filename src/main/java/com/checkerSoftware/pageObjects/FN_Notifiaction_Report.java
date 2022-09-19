@@ -34,16 +34,21 @@ public class FN_Notifiaction_Report extends BaseClass {
 				if(sample_Phone_Number.equalsIgnoreCase(prop.getProperty("phoneNumber"))) {
 					String Actual_sms_Content = driver.findElement(By.xpath("//table[@id='table_rows']/tbody/tr["+(f)+"]/td[4]")).getText();
 					String Expected_SMS_content ="Which laptop you are using currently 1)Apple 2)DELL 3)HP 4)None of Above";
-					Assert.assertTrue(Actual_sms_Content.equalsIgnoreCase(Expected_SMS_content));
+					Assert.assertTrue(Actual_sms_Content.equalsIgnoreCase(Expected_SMS_content)," Mismatch with SMS Text ");
 					System.out.println("SMS text:- "+Actual_sms_Content);
+					System.out.println("Successfully validate SMS text");
 					
 					String Actual_Sent_Massage_Status = driver.findElement(By.xpath("//table[@id='table_rows']/tbody/tr["+(f)+"]/td[6]")).getText();
 					String Expected_Sent_Massage_Status = "Yes";
-					Assert.assertTrue(Actual_Sent_Massage_Status.equalsIgnoreCase(Expected_Sent_Massage_Status));
+					Assert.assertTrue(Actual_Sent_Massage_Status.equalsIgnoreCase(Expected_Sent_Massage_Status), " Expected sent massage ststus is not Yes ");
 					System.out.println("Actual Sent Massage Status:- "+Actual_Sent_Massage_Status);
+					System.out.println("Successfully validate Sent Massage Status as Yes");
 					
-					Assert.assertTrue(sample_Phone_Number.equalsIgnoreCase(prop.getProperty("phoneNumber")));
+					
+					Assert.assertTrue(sample_Phone_Number.equalsIgnoreCase(prop.getProperty("phoneNumber"))," Mismatch with phone Number ");
 					System.out.println("Sample Phone Number:- "+sample_Phone_Number);
+					System.out.println("Successfully validate Phone Number");
+					
 					
 					String sent_at_Records = driver.findElement(By.xpath("//table[@id='table_rows']/tbody/tr["+(f)+"]/td[8]")).getText();
 					System.out.println("Sent Records:- "+sent_at_Records);

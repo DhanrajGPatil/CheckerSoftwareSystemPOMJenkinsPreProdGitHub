@@ -95,7 +95,7 @@ public class BF_Manage_Surveys_EditSurvey extends BaseClass{
 				cut.click();
 		               }
 		    }
-		System.out.println("Clear the Survey");
+		System.out.println("Driver Clear's the privious data in survey");
 	}		
 		
 	public void clearSurvey() throws InterruptedException {
@@ -142,7 +142,7 @@ public class BF_Manage_Surveys_EditSurvey extends BaseClass{
 				cut.click();
 		               }
 		    }
-		System.out.println("Clear the Survey");
+		System.out.println("Driver Clear's the privious data in survey");
 	}
 	
 	

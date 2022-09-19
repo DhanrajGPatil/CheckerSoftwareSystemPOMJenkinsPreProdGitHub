@@ -36,16 +36,18 @@ public class A_MainMenu extends BaseClass{
 	public B_Management clickOnManagement() throws Throwable {
 		try {
 		Action.click(driver, Management);
+		System.out.println("Driver Click's The Management tab");
 		    
 		} catch (Exception e) {
 			e.printStackTrace();
-			
+			System.out.println("Management tab is not Clickable");
 		}
 		return new B_Management();
 	}
 	
 	public C_Questionnaires clickOnQuestionnaires() throws Throwable {
 		Action.click(driver, Questionnaires);
+		System.out.println("Driver Click's The Questionnaires tab");
 		return new C_Questionnaires();
 	}
 	
@@ -57,10 +59,10 @@ public class A_MainMenu extends BaseClass{
 	public E_Operation clickOnOperation() throws Throwable {
 		try {
 		Action.click(driver, Operation);
-		   
+		System.out.println("Driver Click's The Operation tab");
 		} catch (Exception e) {
 			e.printStackTrace();
-			
+			System.out.println("Operation tab is not Clickable");
 		}
 		return new E_Operation();
 	}
@@ -68,10 +70,10 @@ public class A_MainMenu extends BaseClass{
 	public F_Reports clickOnReports() throws Throwable {
 		try {
 		Action.click(driver, Reports);
-		   
+		System.out.println("Driver Click's The Reports tab");
 		} catch (Exception e) {
 			e.printStackTrace();
-			
+			System.out.println("Reports tab is not Clickable");
 		}
 		return new F_Reports();
 	}
